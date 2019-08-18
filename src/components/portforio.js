@@ -9,7 +9,8 @@ import Publications from './publication';
 import Skill from './skill';
 import Contact from './contact';
 import Box from '@material-ui/core/Box';
-import { Info, Note, Laptop, Mail } from '@material-ui/icons';
+import { Info, Description, Laptop, Mail } from '@material-ui/icons';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -40,7 +41,6 @@ class Portforio extends React.Component {
         super(props);
         this.state = {
             activeIndex: 0,
-            drawerLabels: window.innerWidth >= 750 ? true : false,
         };
     };
 
@@ -49,33 +49,45 @@ class Portforio extends React.Component {
     createTabs() {
         const { activeIndex } = this.state;
         return (
-            <div class="tabs" >
-                <Tabs
-                    variant={"fullWidth"}
-                    centered
-                    value={activeIndex}
-                    indicatorColor="primary"
-                    onChange={this.handleChange}
-                >
-                    <Tab icon={<Info />} label={this.state.drawerLabels ? "About" : ""} disableRipple />
-                    <Tab icon={<Note />} label={this.state.drawerLabels ? "Publications" : ""} disableRipple />
-                    <Tab icon={<Laptop />} label={this.state.drawerLabels ? "Skill" : ""} disableRipple />
-                    <Tab icon={<Mail />} label={this.state.drawerLabels ? "Contact" : ""} disableRipple />
-                </Tabs>
-                <TabPanel value={activeIndex} index={0}>
-                    {this.state.height}
-                    <About />
-                </TabPanel>
-                <TabPanel value={activeIndex} index={1}>
-                    <Publications />
-                </TabPanel>
-                <TabPanel value={activeIndex} index={2}>
-                    <Skill />
-                </TabPanel>
-                <TabPanel value={activeIndex} index={3}>
-                    <Contact />
-                </TabPanel>
-            </div>
+            <BrowserRouter>
+                <div class="tabs" >
+                    <Tabs
+                        variant={"fullWidth"}
+                        centered
+                        value={activeIndex}
+                        indicatorColor="primary"
+                        onChange={this.handleChange}
+                    >
+                        <Tab icon={<Info />}
+                            label="About"
+                            component={Link}
+                            to="/"
+                            disableRipple />
+                        <Tab
+                            icon={<Description />}
+                            label="Publications"
+                            component={Link}
+                            to="/publications"
+                            disableRipple />
+                        <Tab
+                            icon={<Laptop />}
+                            label="Skill"
+                            component={Link}
+                            to="/skill"
+                            disableRipple />
+                        <Tab
+                            icon={<Mail />}
+                            label="Contact"
+                            component={Link}
+                            to="/contact"
+                            disableRipple />
+                    </Tabs>
+                    <Route exact path='/' component={About} />
+                    <Route path='/publications' component={Publications} />
+                    <Route path='/skill' component={Skill} />
+                    <Route path='/contact' component={Contact} />
+                </div>
+            </BrowserRouter>
         );
     };
 
@@ -84,7 +96,7 @@ class Portforio extends React.Component {
             <div id="contents">
                 <header position="fixed">
                     <Typography variant="h4">
-                        Ryuya's Portforio
+                        Ryuya's Page
                     </Typography>
                 </header>
                 {this.createTabs()}
