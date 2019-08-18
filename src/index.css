@@ -36,6 +36,10 @@ a:visited {
   margin-bottom: 1em;
 }
 
+.MuiTab-wrapper {
+  font-size: 90%;
+}
+
 .tab {
   padding-top: 1rem;
 }
