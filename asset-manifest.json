@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/portforio/static/css/main.2077157e.chunk.css",
+    "main.js": "/portforio/static/js/main.6b8ad6c3.chunk.js",
+    "main.js.map": "/portforio/static/js/main.6b8ad6c3.chunk.js.map",
+    "runtime~main.js": "/portforio/static/js/runtime~main.299127d0.js",
+    "runtime~main.js.map": "/portforio/static/js/runtime~main.299127d0.js.map",
+    "static/js/2.cc933aa7.chunk.js": "/portforio/static/js/2.cc933aa7.chunk.js",
+    "static/js/2.cc933aa7.chunk.js.map": "/portforio/static/js/2.cc933aa7.chunk.js.map",
+    "index.html": "/portforio/index.html",
+    "precache-manifest.b6a034aa5f063a6d36c457f453f654c8.js": "/portforio/precache-manifest.b6a034aa5f063a6d36c457f453f654c8.js",
+    "service-worker.js": "/portforio/service-worker.js",
+    "static/css/main.2077157e.chunk.css.map": "/portforio/static/css/main.2077157e.chunk.css.map"
+  }
+}
