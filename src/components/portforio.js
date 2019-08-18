@@ -49,7 +49,7 @@ class Portforio extends React.Component {
     createTabs() {
         const { activeIndex } = this.state;
         return (
-            <BrowserRouter>
+            <BrowserRouter basename={process.env.PUBLIC_URL}>
                 <div class="tabs" >
                     <Tabs
                         variant={"fullWidth"}

@@ -49,7 +49,7 @@ function Activity() {
                         2019年1月 - 2月 株式会社日本経済新聞社 インターンシップ
                             <ul><li>自然言語処理による研究開発</li></ul>
                     </li>
-                    <li>2018年12月 株式会社任天堂 インターンシップ（ネットワーク開発コース）</li>
+                    <li>2018年12月 任天堂株式会社 インターンシップ（ネットワーク開発コース）</li>
                     <li>
                         2018年12月 株式会社サイバーエージェント kubernetes勉強会参加
                             <ul><li>CKAD（Certified Kubernetes Application Developer）模擬試験1位</li></ul>
