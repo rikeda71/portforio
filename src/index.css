@@ -5,12 +5,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 2rem 3rem 3rem 3rem;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+header {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 footer {
@@ -48,3 +52,4 @@ ul li {
   padding-top: 3px;
   padding-bottom: 3px;
 }
+

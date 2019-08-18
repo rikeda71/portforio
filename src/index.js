@@ -43,12 +43,10 @@ function MyFooter() {
 function App() {
     return (
         <Container fixed maxWidth="md">
-            <div className="contents">
-                <MuiThemeProvider theme={theme}>
-                    <Portforio />
-                </MuiThemeProvider>
-                <MyFooter />
-            </div>
+            <MuiThemeProvider theme={theme}>
+                <Portforio />
+            </MuiThemeProvider>
+            <MyFooter />
         </Container>
     );
 };

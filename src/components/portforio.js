@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from 'prop-types';
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
@@ -35,42 +35,62 @@ TabPanel.propTypes = {
 };
 
 
-function Portforio(props) {
-    const [index, onChange] = useState(0);
-    return (
-        // ページが小さくなったら，tab下の文字を表示しないようにする
-        <div class="content">
-            <header position="fixed">
-                <Typography variant="h4">
-                    Ryuya's Portforio
-                </Typography>
+class Portforio extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            activeIndex: 0,
+            drawerLabels: window.innerWidth >= 750 ? true : false,
+        };
+    };
+
+    handleChange = (_, activeIndex) => this.setState({ activeIndex });
+
+    createTabs() {
+        const { activeIndex } = this.state;
+        return (
+            <div class="tabs" >
                 <Tabs
                     variant={"fullWidth"}
                     centered
-                    value={index}
+                    value={activeIndex}
                     indicatorColor="primary"
-                    onChange={(e, val) => onChange(val)}
+                    onChange={this.handleChange}
                 >
-                    <Tab icon={<Info />} label="About" disableRipple />
-                    <Tab icon={<Note />} label="Publications" disableRipple />
-                    <Tab icon={<Laptop />} label="Skill" disableRipple />
-                    <Tab icon={<Mail />} label="Contact" disableRipple />
+                    <Tab icon={<Info />} label={this.state.drawerLabels ? "About" : ""} disableRipple />
+                    <Tab icon={<Note />} label={this.state.drawerLabels ? "Publications" : ""} disableRipple />
+                    <Tab icon={<Laptop />} label={this.state.drawerLabels ? "Skill" : ""} disableRipple />
+                    <Tab icon={<Mail />} label={this.state.drawerLabels ? "Contact" : ""} disableRipple />
                 </Tabs>
-            </header>
-            <TabPanel value={index} index={0}>
-                <About />
-            </TabPanel>
-            <TabPanel value={index} index={1}>
-                <Publications />
-            </TabPanel>
-            <TabPanel value={index} index={2}>
-                <Skill />
-            </TabPanel>
-            <TabPanel value={index} index={3}>
-                <Contact />
-            </TabPanel>
-        </div>
-    );
+                <TabPanel value={activeIndex} index={0}>
+                    {this.state.height}
+                    <About />
+                </TabPanel>
+                <TabPanel value={activeIndex} index={1}>
+                    <Publications />
+                </TabPanel>
+                <TabPanel value={activeIndex} index={2}>
+                    <Skill />
+                </TabPanel>
+                <TabPanel value={activeIndex} index={3}>
+                    <Contact />
+                </TabPanel>
+            </div>
+        );
+    };
+
+    render() {
+        return (
+            <div id="contents">
+                <header position="fixed">
+                    <Typography variant="h4">
+                        Ryuya's Portforio
+                    </Typography>
+                </header>
+                {this.createTabs()}
+            </div>
+        );
+    };
 };
 
 
