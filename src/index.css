@@ -35,21 +35,45 @@ a:visited {
   color:#000000;
 }
 
+.MuiTabs-root {
+  margin-bottom: 1rem;
+}
+
 .MuiChip-root {
-  margin-right: 1em;
-  margin-bottom: 1em;
+  margin-right: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .MuiTab-wrapper {
   font-size: 90%;
 }
 
-.tab {
-  padding-top: 1rem;
+
+li {
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  padding-left: 0px;
 }
 
-ul li {
-  padding-top: 3px;
-  padding-bottom: 3px;
+ul {
+  padding-left : 1.5rem;
+}
+li > ul {
+  padding-left: 1rem;
 }
 
+html {
+  font-size: 12px;
+}
+
+@media (min-width: 750px) {
+  html {
+    font-size: calc(12px + ((1vw - 7.5px) * (600 / (1280 - 750))));
+  }
+}
+
+@media (min-width: 1280px) {
+  html {
+    font-size: 18px;
+  }
+}
