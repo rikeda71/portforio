@@ -10,7 +10,7 @@ import Skill from './skill';
 import Contact from './contact';
 import Box from '@material-ui/core/Box';
 import { Info, Description, Laptop, Mail } from '@material-ui/icons';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -49,8 +49,9 @@ class Portforio extends React.Component {
     createTabs() {
         const { activeIndex } = this.state;
         return (
-            <BrowserRouter basename={process.env.PUBLIC_URL}>
+            <Router basename={process.env.PUBLIC_URL}>
                 <div class="tabs" >
+                    {this.props.children}
                     <Tabs
                         variant={"fullWidth"}
                         centered
@@ -82,12 +83,15 @@ class Portforio extends React.Component {
                             to="/contact"
                             disableRipple />
                     </Tabs>
-                    <Route exact path='/' component={About} />
-                    <Route path='/publications' component={Publications} />
-                    <Route path='/skill' component={Skill} />
-                    <Route path='/contact' component={Contact} />
+                    <Switch>
+                        <Route exact path='/about' component={About} />
+                        <Route path='/publications' component={Publications} />
+                        <Route path='/skill' component={Skill} />
+                        <Route path='/contact' component={Contact} />
+                        <Route component={About} />
+                    </Switch>
                 </div>
-            </BrowserRouter>
+            </Router>
         );
     };
 
