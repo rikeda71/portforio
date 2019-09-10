@@ -10,7 +10,7 @@ function Publications() {
                 国際会議（査読あり）
                 </Typography>
             <ul>
-                <li><u>Ryuya Ikeda</u> and Kazuaki Ando, <b>Extraction of Food Product and Shop Names from Blog Articles using Named Entity Recognition</b>, In Proceedings of the 2019 Conference of the Pacific Association for Computational Linguistics (PACLING 2019), 2019</li>
+                <li><u>Ryuya Ikeda</u> and Kazuaki Ando, <b>Extraction of Food Product and Shop Names from Blog Articles using Named Entity Recognition</b>, In Proceedings of the 16th International Conference on the Pacific Association for Computational Linguistics  (PACLING 2019), 2019</li>
                 <li><u>Ryuya Ikeda</u> and Kazuaki Ando, <b>Extraction of Product and Shop Names of Souvenirs from Blog Articles using Conditional Random Fields</b>, In Proceedings of the Fourth International Conference on Electronics and Software Science, pp.101-107, 2018</li>
             </ul>
             <Typography variant="h6">

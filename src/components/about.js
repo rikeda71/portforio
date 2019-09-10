@@ -70,7 +70,7 @@ function Awards() {
     return (
         <div className="awards">
             <Typography variant="h6">
-                受賞・受賞など
+                受賞・資格など
                 </Typography>
             <Typography>
                 <ul>
