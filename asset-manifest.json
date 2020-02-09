@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/portforio/static/css/main.d908d9ad.chunk.css",
-    "main.js": "/portforio/static/js/main.f9ac1f75.chunk.js",
-    "main.js.map": "/portforio/static/js/main.f9ac1f75.chunk.js.map",
+    "main.js": "/portforio/static/js/main.05b0c462.chunk.js",
+    "main.js.map": "/portforio/static/js/main.05b0c462.chunk.js.map",
     "runtime~main.js": "/portforio/static/js/runtime~main.299127d0.js",
     "runtime~main.js.map": "/portforio/static/js/runtime~main.299127d0.js.map",
     "static/js/2.e83eb58e.chunk.js": "/portforio/static/js/2.e83eb58e.chunk.js",
     "static/js/2.e83eb58e.chunk.js.map": "/portforio/static/js/2.e83eb58e.chunk.js.map",
     "index.html": "/portforio/index.html",
-    "precache-manifest.9c9079a77def8886b3894bc26d8c0229.js": "/portforio/precache-manifest.9c9079a77def8886b3894bc26d8c0229.js",
+    "precache-manifest.6a99d510cca309c6246ee9b6c2b81a1d.js": "/portforio/precache-manifest.6a99d510cca309c6246ee9b6c2b81a1d.js",
     "service-worker.js": "/portforio/service-worker.js",
     "static/css/main.d908d9ad.chunk.css.map": "/portforio/static/css/main.d908d9ad.chunk.css.map"
   }
