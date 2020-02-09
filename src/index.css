@@ -32,7 +32,7 @@ footer {
 }
 
 a:visited {
-  color:#000000;
+  color: #000000;
 }
 
 .MuiTabs-root {
@@ -48,7 +48,6 @@ a:visited {
   font-size: 90%;
 }
 
-
 li {
   padding-top: 0.3rem;
   padding-bottom: 0.3rem;
@@ -56,7 +55,7 @@ li {
 }
 
 ul {
-  padding-left : 1.5rem;
+  padding-left: 1.5rem;
 }
 li > ul {
   padding-left: 1rem;
