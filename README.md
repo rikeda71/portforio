@@ -1,3 +1,9 @@
 # Portforio
 
-WIP
+my portforio
+
+## Publishing Steps
+
+```shell script
+npm run build
+```
