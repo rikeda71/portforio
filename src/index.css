@@ -76,3 +76,12 @@ html {
     font-size: 18px;
   }
 }
+
+.Header {
+  position: fixed;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+}
