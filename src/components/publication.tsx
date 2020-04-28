@@ -1,7 +1,7 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
-function _formatAuthor(author: string) {
+const _formatAuthor = (author: string) => {
   if (author.match(/Ryuya Ikeda/) || author.match(/池田 流弥/)) {
     return (
       <span>
@@ -11,10 +11,33 @@ function _formatAuthor(author: string) {
   } else {
     return <span>{author},</span>;
   }
+};
+
+type paperInfoType = {
+  title: string,
+  authors: Array<string>,
+  proc: string,
+  year: number
 }
 
-function ReferedPapers() {
-  const referedPapers = [
+const papersToComponent = (papers: Array<paperInfoType>) => {
+  const paperList = [];
+  for (let i = 0; i < papers.length; i++) {
+    const p = papers[i];
+    const formattedAuthor = p['authors'].map(_formatAuthor);
+    paperList.push(
+        <div>
+          <li>
+            {formattedAuthor} <b>{p['title']}</b>, {p['proc']}, {p['year']}
+          </li>
+        </div>,
+    );
+  }
+  return paperList;
+};
+
+const referedPapers = () => {
+  const referedPapers: Array<paperInfoType> = [
     {
       title:
         'Extraction of Food Product and Shop Names from Blog Articles using Named Entity Recognition',
@@ -32,23 +55,12 @@ function ReferedPapers() {
       year: 2018,
     },
   ];
-  const referedPaperList = [];
-  for (let i = 0; i < referedPapers.length; i++) {
-    const p = referedPapers[i];
-    const formattedAuthor = p['authors'].map(_formatAuthor);
-    referedPaperList.push(
-        <div>
-          <li>
-            {formattedAuthor} <b>{p['title']}</b>, {p['proc']}, {p['year']}
-          </li>
-        </div>,
-    );
-  }
-  return referedPaperList;
-}
+  return papersToComponent(referedPapers);
+};
 
-function Proceedings() {
-  const proceedings = [
+
+const proceedings = () => {
+  const proceedings: Array<paperInfoType> = [
     {
       title: 'シズルワードを利用した土産レビュー文抽出の検討',
       authors: ['池田流弥', '安藤一秋'],
@@ -99,31 +111,19 @@ function Proceedings() {
       year: 2017,
     },
   ];
-  const proceedingList = [];
-  for (let i = 0; i < proceedings.length; i++) {
-    const p = proceedings[i];
-    const formattedAuthor = p['authors'].map(_formatAuthor);
-    proceedingList.push(
-        <div>
-          <li>
-            {formattedAuthor} <b>{p['title']}</b>, {p['proc']}, {p['year']}
-          </li>
-        </div>,
-    );
-  }
-  return proceedingList;
-}
+  return papersToComponent(proceedings);
+};
 
-function Publications() {
+const Publications: React.FC = () => {
   // TODO: 査読なしの論文に関するコードの修正
   return (
     <div>
       <Typography variant="h6">国際会議（査読あり）</Typography>
-      <ul>{ReferedPapers()}</ul>
+      <ul>{referedPapers()}</ul>
       <Typography variant="h6">査読なし論文</Typography>
-      <ul>{Proceedings()}</ul>
+      <ul>{proceedings()}</ul>
     </div>
   );
-}
+};
 
 export default Publications;
