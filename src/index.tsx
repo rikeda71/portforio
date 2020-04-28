@@ -11,7 +11,7 @@ const MyFooter: React.FC = () => {
   return (
     <footer>
       <div className="footer">
-        <Typography>© 2019 Ryuya Ikeda</Typography>
+        <Typography>© 2020 Ryuya Ikeda</Typography>
       </div>
     </footer>
   );

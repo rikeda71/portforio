@@ -80,3 +80,8 @@ html {
 .Header {
   position: fixed;
 }
+
+footer {
+  position: relative;
+  bottom: 0;
+}
