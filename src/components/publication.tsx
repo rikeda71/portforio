@@ -14,11 +14,11 @@ const _formatAuthor = (author: string) => {
 };
 
 type paperInfoType = {
-  title: string,
-  authors: Array<string>,
-  proc: string,
-  year: number
-}
+  title: string;
+  authors: Array<string>;
+  proc: string;
+  year: number;
+};
 
 const papersToComponent = (papers: Array<paperInfoType>) => {
   const paperList = [];
@@ -26,11 +26,11 @@ const papersToComponent = (papers: Array<paperInfoType>) => {
     const p = papers[i];
     const formattedAuthor = p['authors'].map(_formatAuthor);
     paperList.push(
-        <div>
-          <li>
-            {formattedAuthor} <b>{p['title']}</b>, {p['proc']}, {p['year']}
-          </li>
-        </div>,
+      <div>
+        <li>
+          {formattedAuthor} <b>{p['title']}</b>, {p['proc']}, {p['year']}
+        </li>
+      </div>
     );
   }
   return paperList;
@@ -43,7 +43,7 @@ const referedPapers = () => {
         'Extraction of Food Product and Shop Names from Blog Articles using Named Entity Recognition',
       authors: ['Ryuya Ikeda', 'Kazuaki Ando'],
       proc:
-        'In Proceedings of the 16th International Conference on the Pacific Association for Computational Linguistics (PACLING 2019), 14 pages',
+        'In Proceedings of the 16th International Conference on the Pacific Association for Computational Linguistics (PACLING 2019), 15 pages',
       year: 2019,
     },
     {
@@ -57,7 +57,6 @@ const referedPapers = () => {
   ];
   return papersToComponent(referedPapers);
 };
-
 
 const proceedings = () => {
   const proceedings: Array<paperInfoType> = [
@@ -118,9 +117,9 @@ const Publications: React.FC = () => {
   // TODO: 査読なしの論文に関するコードの修正
   return (
     <div>
-      <Typography variant="h6">国際会議（査読あり）</Typography>
+      <Typography variant='h6'>国際会議（査読あり）</Typography>
       <ul>{referedPapers()}</ul>
-      <Typography variant="h6">査読なし論文</Typography>
+      <Typography variant='h6'>査読なし論文</Typography>
       <ul>{proceedings()}</ul>
     </div>
   );

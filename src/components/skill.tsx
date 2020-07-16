@@ -3,15 +3,15 @@ import Chip from '@material-ui/core/Chip';
 import Typography from '@material-ui/core/Typography';
 
 type productType = {
-  name: string,
-  url: string,
-  exp: string
-}
+  name: string;
+  url: string;
+  exp: string;
+};
 
 type chipType = {
-  name: string,
-  chips: Array<JSX.Element>
-}
+  name: string;
+  chips: Array<JSX.Element>;
+};
 
 const products: Array<productType> = [
   {
@@ -23,7 +23,13 @@ const products: Array<productType> = [
     name: 'miNER',
     url: 'https://github.com/Andolab/miNER',
     exp:
-        '固有表現抽出の評価のためのpythonモジュール．学習データ中に出現 する/しない 固有表現を区別した性能評価が可能．',
+      '固有表現抽出の評価のためのpythonモジュール．学習データ中に出現 する/しない 固有表現を区別した性能評価が可能．',
+  },
+  {
+    name: 'Manga Style News',
+    url: 'https://techblog.yahoo.co.jp/entry/2020071630011382/',
+    exp:
+      '漫画みたいに気軽に楽しくニュースを読めるアプリ．24時間で開発．機械学習ロジックなどを担当',
   },
   {
     name: '学習塾シフト管理Webアプリ',
@@ -34,57 +40,71 @@ const products: Array<productType> = [
     name: '文書分類可視化Webアプリ',
     url: 'https://github.com/s14t284/VisualizeClassifier',
     exp:
-        '文書分類のための機械学習モデルの学習の推移，推論を可視化するWebアプリ．',
+      '文書分類のための機械学習モデルの学習の推移，推論を可視化するWebアプリ．',
   },
   {
     name: '続報記事ビューアー',
     url: 'https://nikkei-intern2018-ios.herokuapp.com/',
     exp:
-        'ある話題のニュースの流れを追うことができるWebアプリ（インターンシップで作成）．',
+      'ある話題のニュースの流れを追うことができるWebアプリ（インターンシップで作成）．',
   },
 ];
 
 const Skill: React.FC = () => {
   const intermediate = ['Django', 'flask', 'pytorch', 'scikit-learn', 'Docker'];
   const intermediateChips = intermediate.map((tech: string) => (
-    <Chip label={tech} color="secondary" key={tech}/>
+    <Chip label={tech} color='secondary' key={tech} />
   ));
-  const beginner = ['C/C++', 'Java', 'Javascript', 'SpringBoot', 'React', 'AWS', 'Azure'];
-  const beginnerChips = beginner.map((tech: string) => <Chip label={tech} key={tech}/>);
+  const beginner = [
+    'C/C++',
+    'Java',
+    'Javascript',
+    'SpringBoot',
+    'React',
+    'FastAPI',
+    'AWS',
+    'Azure',
+  ];
+  const beginnerChips = beginner.map((tech: string) => (
+    <Chip label={tech} key={tech} />
+  ));
   const myProducts: Array<productType> = products;
   const productsList = myProducts.map((p: productType) => {
     return (
-      <div className="product" key={p.name}>
-        <li><a href={p.url}>{p.name}</a></li>
+      <div className='product' key={p.name}>
+        <li>
+          <a href={p.url}>{p.name}</a>
+        </li>
         {p.exp}
       </div>
     );
   });
 
   const myChips: Array<chipType> = [
-    {name: 'Advanced',
-      chips: [<Chip label="python" color="primary" key="python"/>]},
-    {name: 'Intermediate', chips: intermediateChips},
-    {name: 'Beginner', chips: beginnerChips},
+    {
+      name: 'Advanced',
+      chips: [<Chip label='python' color='primary' key='python' />],
+    },
+    { name: 'Intermediate', chips: intermediateChips },
+    { name: 'Beginner', chips: beginnerChips },
   ];
 
   return (
-    <div className="technologies">
-      <Typography variant="h5">Technologies</Typography>
+    <div className='technologies'>
+      <Typography variant='h5'>Technologies</Typography>
       <ul>
         {myChips.map((chip: chipType) => {
           return (
             <div key={chip.name}>
               <li key={chip.name}>
-                <Typography variant="h6">{chip.name}</Typography>
+                <Typography variant='h6'>{chip.name}</Typography>
               </li>
               {chip.chips}
             </div>
           );
-        })
-        }
+        })}
       </ul>
-      <Typography variant="h5">Products</Typography>
+      <Typography variant='h5'>Products</Typography>
       <Typography>
         <ul>{productsList}</ul>
       </Typography>
